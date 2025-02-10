@@ -23,7 +23,7 @@ def load_latest_data_with_themes():
         raise FileNotFoundError("No updated data file with themes found in the data directory.")
     files.sort(key=lambda f: os.path.getmtime(os.path.join(DATA_DIR, f)), reverse=True)
     latest_file = os.path.join(DATA_DIR, files[0])
-    with open(latest_file, "r") as f:
+    with open(latest_file, "r", encoding="utf-8") as f:
         data = json.load(f)
     return data, latest_file
 
