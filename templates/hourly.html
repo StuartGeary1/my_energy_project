@@ -1,0 +1,31 @@
+<!-- templates/hourly.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <h1>{{ title }}</h1>
+  <div id="hourly-chart"></div>
+  <script>
+    // For a heatmap, we use a 2D array.
+    // Here, we wrap our counts in another list so that Plotly sees a single row.
+    var zData = [{{ counts|tojson }}];
+    var data = [{
+      z: zData,
+      x: {{ hours|tojson }},
+      y: ['Frequency'],
+      type: 'heatmap',
+      colorscale: 'Viridis'
+    }];
+    var layout = {
+      title: "{{ title }}",
+      xaxis: { title: "Hour of Day", dtick: 1 },
+      yaxis: { title: " " }  // Single row, so label is not very important.
+    };
+    Plotly.newPlot('hourly-chart', data, layout);
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!-- templates/theme.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <h1>{{ title }}</h1>
+  <div id="theme-chart"></div>
+  <script>
+    var data = [{
+      x: {{ themes|tojson }},
+      y: {{ counts|tojson }},
+      type: 'bar'
+    }];
+    var layout = {
+      title: "{{ title }}",
+      xaxis: { title: "Theme" },
+      yaxis: { title: "Count" }
+    };
+    Plotly.newPlot('theme-chart', data, layout);
+  </script>
+</body>
+</html>

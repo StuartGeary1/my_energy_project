@@ -1,0 +1,27 @@
+<!-- templates/daily.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  <!-- Plotly.js via CDN (Reference: https://cdn.plot.ly/plotly-latest.min.js) -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <h1>{{ title }}</h1>
+  <div id="daily-chart"></div>
+  <script>
+    var data = [{
+      x: {{ dates|tojson }},
+      y: {{ counts|tojson }},
+      type: 'bar'
+    }];
+    var layout = {
+      title: "{{ title }}",
+      xaxis: { title: "Date" },
+      yaxis: { title: "Count" }
+    };
+    Plotly.newPlot('daily-chart', data, layout);
+  </script>
+</body>
+</html>

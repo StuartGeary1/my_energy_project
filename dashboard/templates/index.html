@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Presidential Actions Dashboard</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background-color: #1a1a1a; color: #fff; }
+    .container { max-width: 1200px; margin: auto; }
+    .refresh-btn { margin-bottom: 20px; }
+    .alert { padding: 10px; margin-bottom: 20px; border: 1px solid; border-radius: 5px; }
+    .alert-success { background-color: #004d00; border-color: #00a000; }
+    .alert-danger { background-color: #4d0000; border-color: #a00000; }
+    .chart-container { margin-bottom: 50px; }
+    .chart-title { margin-bottom: 10px; }
+    .charts { display: flex; flex-wrap: wrap; gap: 50px; }
+    .chart-box { flex: 1; min-width: 400px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Presidential Actions Dashboard</h1>
+    <p>Last updated: {{ last_updated }}</p>
+    {% if source_file %}
+      <p>Data source: {{ source_file }}</p>
+    {% endif %}
+    <a class="refresh-btn" href="{{ url_for('refresh') }}">
+      <button>Refresh Data</button>
+    </a>
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    
+    <div class="charts">
+      <div class="chart-box">
+        <h2 class="chart-title">Daily Aggregation</h2>
+        <div id="daily-chart"></div>
+      </div>
+      <div class="chart-box">
+        <h2 class="chart-title">Hourly Aggregation (Polar Chart)</h2>
+        <div id="polar-chart"></div>
+      </div>
+      <div class="chart-box">
+        <h2 class="chart-title">Actions by Theme</h2>
+        <div id="theme-chart"></div>
+      </div>
+    </div>
+    
+    <script>
+      // Render daily chart
+      var dailyGraphData = {{ daily_chart_json|safe }};
+      Plotly.newPlot('daily-chart', dailyGraphData.data, dailyGraphData.layout);
+      
+      // Render polar (hourly) chart
+      var polarGraphData = {{ polar_chart_json|safe }};
+      Plotly.newPlot('polar-chart', polarGraphData.data, polarGraphData.layout);
+      
+      // Render theme chart
+      var themeGraphData = {{ theme_chart_json|safe }};
+      Plotly.newPlot('theme-chart', themeGraphData.data, themeGraphData.layout);
+    </script>
+  </div>
+</body>
+</html>

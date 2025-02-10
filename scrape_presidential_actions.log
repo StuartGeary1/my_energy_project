@@ -1,0 +1,36 @@
+2025-02-09 16:53:24,649 [INFO] Starting multi-page presidential actions scraping.
+2025-02-09 16:53:24,650 [INFO] Scraping page 1: https://www.whitehouse.gov/presidential-actions/
+2025-02-09 16:53:24,650 [INFO] Fetching page URL: https://www.whitehouse.gov/presidential-actions/
+2025-02-09 16:54:09,623 [INFO] Starting multi-page presidential actions scraping.
+2025-02-09 16:54:09,623 [INFO] Scraping page 1: https://www.whitehouse.gov/presidential-actions/
+2025-02-09 16:54:09,623 [INFO] Fetching page URL: https://www.whitehouse.gov/presidential-actions/
+2025-02-09 16:54:09,892 [INFO] Found next page: https://www.whitehouse.gov/presidential-actions/page/2/
+2025-02-09 16:54:09,892 [INFO] Scraping page 2: https://www.whitehouse.gov/presidential-actions/page/2/
+2025-02-09 16:54:09,893 [INFO] Fetching page URL: https://www.whitehouse.gov/presidential-actions/page/2/
+2025-02-09 16:54:10,357 [INFO] Found next page: https://www.whitehouse.gov/presidential-actions/page/3/
+2025-02-09 16:54:10,358 [INFO] Scraping page 3: https://www.whitehouse.gov/presidential-actions/page/3/
+2025-02-09 16:54:10,358 [INFO] Fetching page URL: https://www.whitehouse.gov/presidential-actions/page/3/
+2025-02-09 16:54:10,918 [INFO] Found next page: https://www.whitehouse.gov/presidential-actions/page/4/
+2025-02-09 16:54:10,919 [INFO] Scraping page 4: https://www.whitehouse.gov/presidential-actions/page/4/
+2025-02-09 16:54:10,919 [INFO] Fetching page URL: https://www.whitehouse.gov/presidential-actions/page/4/
+2025-02-09 16:54:11,412 [INFO] Found next page: https://www.whitehouse.gov/presidential-actions/page/5/
+2025-02-09 16:54:11,412 [INFO] Scraping page 5: https://www.whitehouse.gov/presidential-actions/page/5/
+2025-02-09 16:54:11,413 [INFO] Fetching page URL: https://www.whitehouse.gov/presidential-actions/page/5/
+2025-02-09 16:54:11,959 [INFO] Found next page: https://www.whitehouse.gov/presidential-actions/page/6/
+2025-02-09 16:54:11,960 [INFO] Scraping page 6: https://www.whitehouse.gov/presidential-actions/page/6/
+2025-02-09 16:54:11,960 [INFO] Fetching page URL: https://www.whitehouse.gov/presidential-actions/page/6/
+2025-02-09 16:54:12,452 [INFO] Found next page: https://www.whitehouse.gov/presidential-actions/page/7/
+2025-02-09 16:54:12,453 [INFO] Scraping page 7: https://www.whitehouse.gov/presidential-actions/page/7/
+2025-02-09 16:54:12,453 [INFO] Fetching page URL: https://www.whitehouse.gov/presidential-actions/page/7/
+2025-02-09 16:54:12,704 [INFO] Found next page: https://www.whitehouse.gov/presidential-actions/page/8/
+2025-02-09 16:54:12,705 [INFO] Scraping page 8: https://www.whitehouse.gov/presidential-actions/page/8/
+2025-02-09 16:54:12,705 [INFO] Fetching page URL: https://www.whitehouse.gov/presidential-actions/page/8/
+2025-02-09 16:54:13,194 [INFO] Found next page: https://www.whitehouse.gov/presidential-actions/page/9/
+2025-02-09 16:54:13,195 [INFO] Scraping page 9: https://www.whitehouse.gov/presidential-actions/page/9/
+2025-02-09 16:54:13,195 [INFO] Fetching page URL: https://www.whitehouse.gov/presidential-actions/page/9/
+2025-02-09 16:54:13,692 [INFO] Found next page: https://www.whitehouse.gov/presidential-actions/page/10/
+2025-02-09 16:54:13,692 [INFO] Scraping page 10: https://www.whitehouse.gov/presidential-actions/page/10/
+2025-02-09 16:54:13,692 [INFO] Fetching page URL: https://www.whitehouse.gov/presidential-actions/page/10/
+2025-02-09 16:54:14,165 [INFO] No further pages found from https://www.whitehouse.gov/presidential-actions/page/10/
+2025-02-09 16:54:14,167 [INFO] Data successfully saved to data\presidential_actions_20250209_165414.json
+2025-02-09 16:54:14,167 [INFO] Scraping completed.
